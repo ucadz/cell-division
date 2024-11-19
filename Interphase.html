@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cell Division</title>
+        <link rel="stylesheet" href="style7.css">
+    </head>
+    <body>
+        <audio id="backgroundMusic" loop autoplay>
+            <source src="YEHEY.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <div class="intro-container">
+            <div class="intro-content">
+                <h2 class="custom-heading1"> " Congratulations "</h2>
+                <h2 class="custom-heading">You complete the stages of Interphase</h2>
+                <button id="G1chckBtn" class="task-button" disabled><i class="fas"></i></button> 
+                <button id="SchckBtn" class="task-button" disabled><i class="fas"></i></button>
+                <button id="G2chckBtn" class="task-button"><i class="fas"></i></button>
+            </div>
+        </div>
+
+        <!-- Pop-up Modal -->
+        <div id="popupModal" class="modal" style="display:none;">
+            <div class="modal-content">
+                <h2>Congratulations!</h2>
+                <p>You have successfully completed Interphase.</p>
+                <button id="continueBtn" class="task-button" ><a href="DoneGame1.html"></a>Continue</button>
+            </div>
+        </div>
+
+        <!-- Autoplay Background Music -->
+        <script src="script5.js"></script>
+        <script src="confetti.js"></script>
+        <script>
+            // Start Confetti
+            const start = () => {
+                setTimeout(function() {
+                    confetti.start()
+                }, 1000); 
+            };
+
+            // Stop Confetti
+            const stop = () => {
+                setTimeout(function() {
+                    confetti.stop()
+                }, 5000); 
+            };
+
+            start();
+
+            // Show Pop-up Modal
+            window.onload = function() {
+                document.getElementById("popupModal").style.display = "block";
+            }
+
+            // Hide Pop-up Modal when 'Continue' button is clicked
+            document.getElementById("continueBtn").addEventListener("click", function() {
+                window.location.href = "DoneGame1.html"; // Redirect to the next page
+            });
+        </script>
+
+        <style>
+            /* Modal Styling */
+            .modal {
+                position: fixed;
+                z-index: 1;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.5);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .modal-content {
+                background-color: white;
+                padding: 20px;
+                border-radius: 10px;
+                text-align: center;
+                width: 300px;
+            }
+
+            .task-button {
+                padding: 10px 20px;
+                margin-top: 10px;
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+            .task-button:hover {
+                background-color: #45a049;
+            }
+        </style>
+
+    </body>
+</html>

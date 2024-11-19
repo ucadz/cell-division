@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cell Division</title>
+    <link rel="stylesheet" href="style5.css">
+    <!-- Font Awesome for the icons -->
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">-->
+</head>
+<body>
+    <div class="intro-container">
+        <div class="intro-content">
+            <h2 class="custom-heading1">Cell Division (Mitosis)</h2>
+            <h2 class="custom-heading">Proceed to the G2-Phase!</h2>
+
+            <button id="G1chckBtn" class="task-button" disabled><i class="fas"></i> G1 Check</button>
+            <button id="SchckBtn" class="task-button" disabled><i class="fas"></i> S Check</button>
+            <button id="G2Btn" class="task-button" onclick="redirectToPage()"><i class="fas"></i> G2 Phase</button>
+            <button id="finalBtn" class="final-button" style="display: none;">Final Phase</button>
+        </div>
+    </div>
+
+    <!-- Home Icon -->
+    <i id="homeIcon" class="fas fa-home home-icon"></i>
+    <!-- Gear Icon for Instructions (hidden) -->
+    <i id="instructionGear" class="fas fa-cog gear-icon" hidden></i>
+
+    <!-- Pop-up Modal for Instructions -->
+    <div id="instructionModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Game Instructions</h2>
+            <p>Welcome to the game! Here are the instructions to play:</p>
+            <ul>
+                <li>Click "Start the Adventure" to begin the game.</li>
+                <li>Follow the prompts on each level to complete the tasks.</li>
+                <li>Have fun and learn!</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Home Confirmation Modal -->
+    <div id="homeModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Confirmation</h2>
+            <p>Are you sure you want to go home?</p>
+            <button id="yesBtn">Yes</button>
+            <button id="noBtn">No</button>
+        </div>
+    </div>
+
+    <!-- Audio Files -->
+    <audio id="clickSound" src="pop-7.mp3"></audio>
+    <audio id="homeSound" src="pop-7.mp3"></audio>
+
+    <script src="script5.js"></script>
+</body>
+</html>

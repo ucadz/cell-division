@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cell Division:  Mitosis</title>
+    <link rel="stylesheet" href="styleAnaphase.css">
+</head>
+<body>
+    <h1>Cell Division:  Mitosis</h1>
+    <div class="circle">
+        <!-- Large Dots -->
+        <div class="large-dot" id="left-dot"></div>
+        <div class="large-dot" id="right-dot"></div>
+
+        <!-- First Group of Central Dots (Left Side) -->
+        <div class="central-dot left-group" id="dot1"></div>
+        <div class="central-dot left-group" id="dot2"></div>
+        <div class="central-dot left-group" id="dot3"></div>
+        <div class="central-dot left-group" id="dot4"></div>
+
+        <!-- Second Group of Central Dots (Right Side) -->
+        <div class="central-dot right-group" id="dot5"></div>
+        <div class="central-dot right-group" id="dot6"></div>
+        <div class="central-dot right-group" id="dot7"></div>
+        <div class="central-dot right-group" id="dot8"></div>
+
+        <!-- SVG for Connections with Filter Definitions -->
+        <svg class="connections" width="100%" height="100%">
+            <defs>
+                <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+                    <feDropShadow 
+                        dx="3" 
+                        dy="3" 
+                        stdDeviation="3" 
+                        flood-color="rgba(0, 0, 0, 0.5)" 
+                    />
+                </filter>
+            </defs>
+            <!-- Curved Paths will be dynamically added via JavaScript -->
+        </svg>
+    </div>
+    
+    <!-- Chromosome Meaning Paragraph -->
+    <p id="chromosomeMeaning">Chromosomes: Are pulled apart as sister chromatids separate and move toward opposite poles of the cell. This ensures that each new daughter cell will receive an identical set of chromosomes during cell division.</p>
+    
+    <!-- Popup Structure -->
+    <div class="overlay" id="overlay"></div>
+    <div class="popup" id="popup">
+        <img src="imageA/Anaphase.png" alt="Anaphase" style="width: 100%; max-width: 300px;">
+        <p>Anaphase: The shortest stage of mitosis, the sister chromatids break apart, and the chromosomes begin moving to opposite ends of the cell. By the end of anaphase, the 2 halves of the cell have an equivalent collection of chromosomes.</p>
+        
+        <audio id="anaphaseAudio">
+            <source src="audioA/Anaphase.wav" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <button id="okayButton">Next Level</button>
+    </div>
+
+    <script src="scriptAnaphase.js"></script>
+</body>
+</html>

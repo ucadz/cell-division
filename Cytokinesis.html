@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cytokinesis Puzzle</title>
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="styleC.css">
+</head>
+<body>
+    <div id="container">	
+        <!-- Title -->
+        <h1>Cytokinesis Puzzle</h1>
+
+        <!-- Start Button -->
+        <a href="#" class="button start">Start</a>
+
+        <!-- Puzzle Area -->
+        <div class="box">	
+            <div class="me full"></div>
+        </div>
+
+        <!-- Preview Image and File Input -->
+        <div class="pre_img">	
+            <li data-bid="">
+                <img src="imageC/cell2.jpg" alt="Preview">
+            </li>
+            <input type="file" name="image" id="file1" style="display: none;">
+        </div>
+
+        <!-- Reset Button -->
+        <div style="text-align: center;">
+            <a href="#" class="button reset">Reset</a>
+        </div>
+    </div>
+
+    <!-- Cover Section (Displayed After Puzzle Completion) -->
+    <div class="cover" style="display: none;">
+        <div class="score">
+            <!-- Cytokinesis Image -->
+            <img id="cytokinesis-img" src="imageC/cell.png" alt="Cytokinesis" style="width: 100%; max-width: 600px; display: block; margin: 20px auto;">
+
+            <!-- Definition of Cytokinesis -->
+            <p id="cytokinesis-def" style="text-align: center; margin: 10px;">
+                Cytokinesis is the final stage of cell division, occurring after mitosis, where the cytoplasm divides to form two daughter cells.
+                It typically begins during anaphase and concludes in telophase. Cytokinesis ensures that each new cell has its own set of organelles 
+                and genetic material, completing the process of cell division.
+            </p>
+
+            <!-- Autoplay Audio Explanation (Uncomment if needed) -->
+            <!--
+            <audio id="cytokinesis-audio" autoplay>
+                <source src="audioC/Cytokinesis.wav" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            -->
+
+            <!-- OK Button -->
+            <div style="text-align: center;">
+                <button class="button OK">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="jquery.min.js"></script>
+    <script src="scriptPuzzle.js"></script>
+</body>
+</html>

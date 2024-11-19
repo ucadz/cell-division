@@ -1,0 +1,215 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: url('bckScience.png') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Style for popup */
+.popup {
+    display: block;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup-content {
+    background: #fff;
+    margin: 15% auto;
+    padding: 30px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* OK button */
+.ok-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.ok-btn:hover {
+    background-color: #45a049;
+}
+
+/* Game Button Styles */
+.game-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+    margin-bottom: 0;
+}
+
+.game-btn {
+    width: 200px;
+    height: 200px;
+    background-color: #f2f2f200;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    font-family: 'Arial', sans-serif;
+}
+
+.game-btn img {
+    width: 100%;
+    height: 85%;
+}
+
+.game-btn p {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    color: white;
+    font-size: 18px;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin: 0;
+    padding: 10px;
+    border-radius: 0 0 15px 15px;
+}
+
+.game-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Keyframe animation for popup */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.popup-content {
+    animation: fadeIn 1s ease-in-out;
+}
+
+.justified-text {
+    text-align: justify;
+    font-size: 15px;
+}
+
+/* Audio controls */
+.audio-controls {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1;
+}
+
+#toggleBtn {
+    width: 80px;
+    height: 70px;
+    background-image: url('sound-On.png');
+    background-size: cover;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+#toggleBtn:focus {
+    outline: none;
+}
+
+#toggleBtn.paused {
+    background-image: url('sound-Off.png');
+    background-color: transparent;
+}
+
+/* Media Queries for Responsiveness */
+
+/* Adjust layout for mobile devices */
+@media (max-width: 768px) {
+    .popup-content {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .game-btn {
+        width: 150px;
+        height: 150px;
+    }
+
+    .game-btn p {
+        font-size: 16px;
+        padding: 8px;
+    }
+
+    .ok-btn {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    #toggleBtn {
+        width: 60px;
+        height: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .popup-content {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .game-container {
+        flex-direction: column;
+        justify-content: center;
+        height: auto;
+        padding: 20px 0;
+    }
+
+    .game-btn {
+        width: 120px;
+        height: 120px;
+    }
+
+    .game-btn p {
+        font-size: 14px;
+        padding: 6px;
+    }
+
+    .ok-btn {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    #toggleBtn {
+        width: 50px;
+        height: 40px;
+    }
+}
+@media (max-width: 768px) {
+    .popup-content {
+        width: 90%;
+        height: auto;
+        padding: 10px;
+    }
+    .game-btn {
+        width: 120px;
+        height: 120px;
+    }
+}
+

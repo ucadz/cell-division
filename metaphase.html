@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Metaphase</title>
+        <link rel="stylesheet" href="styleMetaphase.css">
+    </head>
+    <body>
+
+        <!-- Reset Button -->
+        <!--<button id="reset-button" class="reset-button">Reset</button>-->
+
+        <div class="container">
+            <!-- Draggable Big Dots Wrapper -->
+            <h1>Cell Division: Mitosis</h1>
+            <div class="big-dots">
+                <div class="dot" id="dot1" draggable="true" ondragstart="drag(event)" aria-label="Draggable Dot 1" tabindex="0" role="button"></div>
+                <div class="dot" id="dot2" draggable="true" ondragstart="drag(event)" aria-label="Draggable Dot 2" tabindex="0" role="button"></div>
+            </div>
+            <audio id="g1ExplanationSound" src="audio/metaphase.wav"></audio>
+            <!-- Draggable Images Container -->
+            <div class="draggable-images">
+                <!-- Image 1 -->
+                <div class="image-container">
+                    <img src="images/cntrosomeHRR.png" alt="Image 1" class="draggable-image selectable" id="image1" draggable="true" aria-label="Draggable Image 1" tabindex="0" role="img">
+                    <span class="checkmark" id="check1">&#10004;</span>
+                </div>
+                <!-- Image 2 -->
+                <div class="image-container">
+                    <img src="images/cntrosomeHRL.png" alt="Image 2" class="draggable-image selectable" id="image2" draggable="true" aria-label="Draggable Image 2" tabindex="0" role="img">
+                    <span class="checkmark" id="check2">&#10004;</span>
+                </div>
+                <!-- Image 3 -->
+                <div class="image-container">
+                    <img src="images/cntrosomeHBL.png" alt="Image 3" class="draggable-image selectable" id="image3" draggable="true" aria-label="Draggable Image 3" tabindex="0" role="img">
+                    <span class="checkmark" id="check3">&#10004;</span>
+                </div>
+                <!-- Image 4 -->
+                <div class="image-container">
+                    <img src="images/cntrosomeHBR.png" alt="Image 4" class="draggable-image selectable" id="image4" draggable="true" aria-label="Draggable Image 4" tabindex="0" role="img">
+                    <span class="checkmark" id="check4">&#10004;</span>
+                </div>
+                <!-- Image 5 -->
+                <div class="image-container">
+                    <img src="images/cntrosomeHRR.png" alt="Image 5" class="draggable-image selectable" id="image5" draggable="true" aria-label="Draggable Image 5" tabindex="0" role="img">
+                    <span class="checkmark" id="check5">&#10004;</span>
+                </div>
+                <!-- Image 6 -->
+                <div class="image-container">
+                    <img src="images/cntrosomeHRL.png" alt="Image 6" class="draggable-image selectable" id="image6" draggable="true" aria-label="Draggable Image 6" tabindex="0" role="img">
+                    <span class="checkmark" id="check6">&#10004;</span>
+                </div>
+                <!-- Image 7 -->
+                <div class="image-container">
+                    <img src="images/cntrosomeHBL.png" alt="Image 7" class="draggable-image selectable" id="image7" draggable="true" aria-label="Draggable Image 7" tabindex="0" role="img">
+                    <span class="checkmark" id="check7">&#10004;</span>
+                </div>
+                <!-- Image 8 -->
+                <div class="image-container">
+                    <img src="images/cntrosomeHBR.png" alt="Image 8" class="draggable-image selectable" id="image8" draggable="true" aria-label="Draggable Image 8" tabindex="0" role="img">
+                    <span class="checkmark" id="check8">&#10004;</span>
+                </div>
+                <!-- Additional Images as Needed -->
+            </div>
+
+            <!-- Combine Button -->
+            <button id="combineButton" class="combine-button" style="display: none;">Combine</button>
+
+            <!-- Circular Dropzone -->
+            <div class="dropzone" id="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)" aria-label="Dropzone">
+                <!-- SVG for Connecting Curves -->
+                <svg id="connection-svg" width="100%" height="100%" class="connection-svg" aria-hidden="true"></svg>
+
+                <!-- Central Dots Container -->
+                <div class="central-dots">
+                    <div class="central-dot" id="central-dot1" aria-label="Central Dot 1" tabindex="0" role="button" title="Connect here"></div>
+                    <br>
+                    <div class="central-dot" id="central-dot2" aria-label="Central Dot 2" tabindex="0" role="button" title="Connect here"></div>
+                    <br>
+                    <div class="central-dot" id="central-dot3" aria-label="Central Dot 3" tabindex="0" role="button" title="Connect here"></div>
+                    <br>
+                    <div class="central-dot" id="central-dot4" aria-label="Central Dot 4" tabindex="0" role="button" title="Connect here"></div>
+                </div>
+
+            </div>
+        </div>
+        <audio id="dropSound">
+         <source src="audioT/Pop_sound_effect.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <script src="scriptMetaphase.js"></script>
+
+    </body>
+</html>

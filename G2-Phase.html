@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cell Division</title>
+        <link rel="stylesheet" href="style.css">
+
+        <style>
+            /* Additional styles for centering the dropped images display */
+            .merged-images-display {
+                display: flex;
+                justify-content: center; /* Center horizontally */
+                align-items: center; /* Center vertically (if needed) */
+                flex-wrap: wrap; /* Allow wrapping of images */
+                margin-top: 20px; /* Spacing above the display area */
+                position: relative; /* To position child elements correctly */
+            }
+
+            .merged-images-display img {
+                width: 150px; /* Adjust image size */
+                height: 150px; /* Adjust image size */
+                margin: 10px; /* Space between images */
+                object-fit: cover; /* Maintain aspect ratio */
+            }
+
+            /* Other styles for the modal and other elements can go here */
+        </style>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </head>
+    <body>
+        <h1 class="g1-phase-title">Cell Division (Mitosis)</h1>
+
+        <div class="container">
+            <!-- Draggable items -->
+            <div class="drag-items" id="dragItemsContainer">
+                <img src="Cell.png" id="Cell" draggable="true" name="Cell" ondragstart="drag(event)" title="Cell" onmousedown="playClickSound()">
+                <img src="Nucleus.png" id="Nucleus" draggable="true" name="Nucleus" ondragstart="drag(event)" title="Nucleus" onmousedown="playClickSound()">
+                <img src="Chromatin-G2.png" id="Chromatin-G2" draggable="true" name="Chromatin" ondragstart="drag(event)" title="Chromatin" onmousedown="playClickSound()">
+                <img src="Nucleolus.png" id="Nucleolus" draggable="true" name="Nucleolus" ondragstart="drag(event)" title="Nucleolus" onmousedown="playClickSound()">
+                <img src="Centrosome-G2.png" id="Centrosome-G2" draggable="true" name="Centrosome" ondragstart="drag(event)" title="Centrosome" onmousedown="playClickSound()">
+
+            </div>
+
+            <!-- Drop zone with slots -->
+            <div class="drop-zone">
+                <div class="drop-slot" ondrop="drop(event, 0)" ondragover="allowDrop(event)"></div>
+                <div class="drop-slot" ondrop="drop(event, 1)" ondragover="allowDrop(event)"></div>
+                <div class="drop-slot" ondrop="drop(event, 2)" ondragover="allowDrop(event)"></div>
+                <div class="drop-slot" ondrop="drop(event, 3)" ondragover="allowDrop(event)"></div>
+                <div class="drop-slot" ondrop="drop(event, 4)" ondragover="allowDrop(event)"></div>
+            </div>
+        </div>
+
+        <button id="combineButton" onclick="combine()"><i class="fas fa-layer-group"></i>Combine</button>
+        <button id="reststartBtn" onclick="reloadPage()"><i class="fas fa-redo"></i>Restart</button>
+
+        <!-- Add these audio elements to your HTML file -->
+        <audio id="clickSound" src="Click_sound_effect.mp3"></audio>
+        <audio id="dropSound" src="Pop_sound_effect.mp3"></audio>
+        <audio id="g1ExplanationSound" src="G2-phase.wav"></audio> <!-- Add this element for G1 explanation sound -->
+        <audio id="swapSound" src="swap.mp3"></audio>
+        <audio id="wrongSound" src="wrong.mp3"></audio>
+        <audio id="holdSound" src="Hold_sound_effect.mp3"></audio> <!-- Add the hold sound -->
+
+        <!-- Area to display merged images below the combine button -->
+        <div id="droppedImagesDisplay" class="merged-images-display"></div>
+
+        <!-- Area to display the name and meaning -->
+        <div id="imageDescription" class="image-description"></div>
+
+
+
+        <!-- Modal Pop-up -->
+        <div id="modal" class="modal">
+            <div id="modal-content" class="modal-content">
+                <!-- Content will be dynamically added here -->
+            </div>
+        </div>
+        <audio id="combineSound" src="pop-7.mp3" preload="auto"></audio>
+        <audio id="restartSound" src="pop-7.mp3"></audio>
+        <audio id="fillSlotsSound" src="wrong.mp3" preload="auto"></audio>
+
+        <script src="scriptG2.js"></script>
+
+        <script>
+            function reloadPage() {
+                // Play the restart sound
+                const restartSound = document.getElementById('restartSound');
+                restartSound.currentTime = 0; // Reset sound to the beginning
+                restartSound.play(); // Play the sound effect
+
+                // Delay page reload to let the sound play before reloading
+                setTimeout(() => {
+                    location.reload(); // Reloads the page after 500ms
+                }, 500);  // Adjust delay if needed
+            }
+        </script>
+
+        <script>
+// ===============================
+// Combine Images Function
+// ===============================
+
+            function combine() {
+                // Play the combine sound
+                const combineSound = document.getElementById('combineSound');
+                combineSound.currentTime = 0; // Reset the sound to the beginning
+                combineSound.play(); // Play the sound effect
+
+                // Add your logic for the combine action here
+                console.log('Combine action triggered');
+
+                // Continue with your existing combine logic
+                const correctOrder = ['Cell', 'Nucleus', 'Chromatin-G2', 'Nucleolus', 'Centrosome-G2'];
+                const modal = document.getElementById("modal");
+                const modalContent = document.getElementById("modal-content");
+
+                // Check if all slots are filled
+                if (droppedImages.includes('')) {
+                    // Play the fill slots sound effect
+                    const fillSlotsSound = document.getElementById('fillSlotsSound');
+                    fillSlotsSound.currentTime = 0; // Reset the sound to the beginning
+                    fillSlotsSound.play(); // Play the fill slots sound
+
+                    showModal("Fill all the slots first!");
+                    return;
+                }
+
+                const isCorrect = JSON.stringify(droppedImages) === JSON.stringify(correctOrder);
+
+                if (isCorrect) {
+                    playG1Explanation(); // Play the G1 phase explanation sound
+                    showModalWithDescription(); // Show modal with G1 phase description and image
+                } else {
+                    playWrongSound(); // Play the wrong sound if the order is incorrect
+                    showModal("Oops, that's not quite right! Try again.");
+                }
+            }
+        </script>
+    </body>
+</html>

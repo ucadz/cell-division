@@ -1,0 +1,252 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f0f0; /* Optional: Add a light background */
+    background-image: url('imageT/bckScience.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+h1 {
+    margin-top: 20px;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Allow wrapping for better responsiveness */
+    gap: 10px;
+    margin: 20px auto;
+    max-width: 10000px; /* Optional: Limit the width */
+}
+
+/* Set size for the draggable images */
+.draggable {
+    width: 180px; /* Set desired width */
+    height: 180px; /* Set desired height */
+    cursor: grab;
+    transition: transform 0.2s; /* Smooth scaling */
+    object-fit: cover; /* Optional: Ensure the image covers the defined dimensions */
+}
+
+.draggable:active {
+    cursor: grabbing;
+}
+
+.dropzone {
+    width: 350px;
+    height: 350px;
+    border: 2px dashed #ccc;
+    border-radius: 50%;
+    margin: 20px auto;
+    position: relative;
+    background-color: #ffffff;
+    background-image: url('imageT/Cell.png'); /* Add your background image path here */
+    background-size: cover; /* Scale the image to cover the dropzone */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+}
+
+.dropzone:hover {
+    border-color: #666; /* Change border color on hover */
+}
+
+.merged-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px; /* Increased size */
+    height: 350px; /* Increased size */
+    transition: width 0.3s, height 0.3s; /* Smooth size transition */
+}
+
+/* Hide the original image when dragging */
+
+
+/* Definition Container Styles */
+#definition-container {
+    margin-top: 20px;
+    font-size: 18px; /* Default font size */
+    font-family: 'Comic Sans MS', Tahoma, Geneva, Verdana, sans-serif; /* Default font family */
+    color: black; /* Text color */
+    padding: 10px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 
+        -1px -1px 0 white,  
+         1px -1px 0 white,
+        -1px  1px 0 white,
+         1px  1px 0 white;
+}
+
+/* Definition Text Styles */
+.definition-text {
+    font-size: 20px; /* Increased font size for better readability */
+    font-style: italic; /* Italicize the text */
+    font-weight: 500; /* Slightly bolder text */
+    line-height: 1.6; /* Improved line spacing */
+    color: black; /* Darker text color for contrast */
+    transition: opacity 0.5s ease; /* Smooth transition for opacity changes */
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+}
+
+/* Fade-In Animation */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive Font Size for Smaller Screens */
+@media (max-width: 600px) {
+    .definition-text {
+        font-size: 16px; /* Smaller font size on mobile devices */
+    }
+
+    .dropzone {
+        width: 80vw; /* Responsive width */
+        height: 80vw; /* Responsive height */
+    }
+
+    .draggable {
+        width: 120px; /* Smaller width for mobile */
+        height: 120px; /* Smaller height for mobile */
+    }
+}
+.popup {
+    position: relative;
+    top: 100;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 20px;
+    z-index: 1000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 400px; /* Fixed width for better layout */
+    border-radius: 8px; /* Rounded corners for popup */
+}
+
+.close-button-wrapper {
+    display: flex;
+    justify-content: flex-end; /* Align items to the right */
+    align-items: center; /* Center vertically */
+    margin-bottom: 10px; /* Space between header and content */
+}
+
+.close-button {
+    background-color: #f44336; /* Red */
+    color: white;
+    border: none;
+    padding: 10px 15px; /* Add horizontal padding */
+    cursor: pointer;
+    margin-left: 10px; /* Space between icon and button */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s;
+}
+
+.close-button:hover {
+    background-color: #c62828; /* Darker red on hover */
+}
+
+.close-icon {
+    font-size: 20px;
+    color: #f44336; /* Red */
+    cursor: pointer;
+    position: absolute; /* Absolute positioning */
+    top: 10px; /* Adjust this value to position vertically */
+    right: 10px; /* Adjust this value to position horizontally */
+    transition: color 0.3s;
+}
+.close-icon:hover {
+    color: #c62828; /* Darker red on hover */
+}
+
+.popup img {
+    width: 400px; /* Make image responsive */
+    height: 230px; /* Maintain aspect ratio */
+}
+
+.popup p {
+    margin: 10px 0;
+    font-size: 18px; /* Font size for the definition */
+    font-family: 'Comic Sans MS', Tahoma, Geneva, Verdana, sans-serif; /* Font style */
+    line-height: 1.5; /* Improved line spacing for readability */
+    color: #555; /* Text color */
+}
+
+/* Style for the Continue button */
+.next-page-button {
+    background-color: #4CAF50; /* Green background color */
+    color: white; /* White text */
+    font-size: 16px; /* Font size */
+    padding: 15px 32px; /* Padding around the text */
+    border: none; /* No border */
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    text-align: center; /* Center the text */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow */
+    outline: none; /* Remove the outline */
+}
+
+.next-page-button:hover {
+    background-color: #45a049; /* Darker green when hovered */
+    transform: scale(1.05); /* Slightly enlarge the button */
+}
+
+.next-page-button:active {
+    background-color: #387940; /* Even darker green when the button is clicked */
+    transform: scale(1); /* Reset to normal size on click */
+}
+
+.next-page-button:focus {
+    outline: none; /* Remove focus outline */
+}
+/* Style for the Try Again button */
+.close-button {
+    background-color: #f44336; /* Red background color */
+    color: white; /* White text */
+    font-size: 16px; /* Font size */
+    padding: 15px 32px; /* Padding around the text */
+    border: none; /* No border */
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    text-align: center; /* Center the text */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow */
+    outline: none; /* Remove outline */
+}
+
+.close-button:hover {
+    background-color: #e53935; /* Darker red on hover */
+    transform: scale(1.05); /* Slightly enlarge the button */
+}
+
+.close-button:active {
+    background-color: #c62828; /* Even darker red when clicked */
+    transform: scale(1); /* Reset to normal size on click */
+}
+
+.close-button:focus {
+    outline: none; /* Remove focus outline */
+}
+h1 {
+    font-family: "Comic Sans MS", "Comic Sans", cursive; /* Comic Sans font */
+    font-size: 2.5em; /* Adjust font size as needed */
+    text-align: center; /* Center the text */
+    margin-top: 20px; /* Adjust spacing above the title */
+    color: white; /* Text color set to white */
+
+    /* Stroke effect with black shadow */
+    text-shadow: 
+        -1px -1px 0 #000000, /* Top left */
+         1px -1px 0 #000000, /* Top right */
+        -1px  1px 0 #000000, /* Bottom left */
+         1px  1px 0 #000000; /* Bottom right */
+}

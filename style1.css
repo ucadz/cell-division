@@ -1,0 +1,242 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    background-color: paleturquoise;
+    background: url('background-image1.png') no-repeat center center fixed;
+    background-size: cover; /* Ensures the image covers the whole background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.intro-container {
+    text-align: center;
+    background: transparent; /* Fully transparent background */
+    padding: 150px;
+    border-radius: 0px;
+    animation: fadeIn 2s ease-in-out;
+    width: 890px;
+}
+
+/* Center the text */
+.intro-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.intro-content h1 {
+    font-size: 3em;
+    color: #333;
+    margin-bottom: 20px; /* Spacing between heading and paragraph */
+}
+
+.intro-content p {
+    font-size: 1.5em;
+    margin-bottom: 40px; /* Spacing between paragraph and button */
+}
+
+#startBtn {
+    width: 250px; /* Set this to the width of your image (adjust as needed) */
+    height: 250px; /* Set this to the height of your image (adjust as needed) */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: url('start-button.png') no-repeat center center;
+    background-size: cover; /* Ensures the image covers the button */
+    transition: transform 0.5s linear; /* Steady transition */
+    font-size: 0; /* Hide the text inside since the image is replacing it */
+    display: block; /* Ensures it takes up space as a block element */
+    margin: 20px auto; /* Centers the button horizontally and adds space above/below */
+    position: absolute; /* Use absolute positioning to place it relative to the intro-container */
+    bottom: 20px; /* Position it 20px above the bottom of the container */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Offset for centering */
+}
+
+/* Add a hover effect to the button */
+#startBtn:hover {
+    transform: scale(1.1) rotate(5deg); /* Slight zoom and rotate effect on hover */
+}
+
+#G1Btn {
+    width: 145px; /* Set this to the width of your image (adjust as needed) */
+    height: 60px; /* Set this to the height of your image (adjust as needed) */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: url('g-button.png') no-repeat center center;
+    background-size: cover; /* Ensures the image covers the button */
+    transition: transform 0.3s;
+    font-size: 0; /* Hide the text inside since the image is replacing it */
+}
+
+/* Add a hover effect to the button */
+#G1Btn:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+/* Animation for the intro container */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Gear Icon for Instructions */
+.gear-icon {
+    font-size: 40px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    color: #ff6b6b;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.gear-icon:hover {
+    transform: rotate(90deg);
+}
+
+/* Modal for Instructions */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with transparency */
+}
+
+/* Modal content */
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+/* Close button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.audio-controls {
+    position: absolute; /* Positioning it relative to the intro-container */
+    top: 20px; /* Distance from the top */
+    left: 20px; /* Distance from the left */
+    z-index: 1; /* Ensure it is on top of other content */
+}
+
+#toggleBtn {
+    width: 80px; /* Set width for the button */
+    height: 70px; /* Set height for the button */
+    background-image: url('sound-On.png'); /* Default background image */
+    background-size: cover; /* Cover the button area with the image */
+    background-color: transparent; /* Set the background color to transparent */
+    border: none; /* Remove border */
+    cursor: pointer; /* Pointer cursor on hover */
+    padding: 0; /* Remove padding */
+}
+
+#toggleBtn:focus {
+    outline: none; /* Remove focus outline */
+}
+
+#toggleBtn.paused {
+    background-image: url('sound-Off.png'); /* Change background image when paused */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .intro-container {
+        padding: 50px; /* Reduce padding for smaller screens */
+        width: 90%; /* Use a percentage width for better responsiveness */
+    }
+
+    .intro-content h1 {
+        font-size: 2em; /* Reduce font size for the heading */
+    }
+
+    .intro-content p {
+        font-size: 1.2em; /* Reduce font size for the paragraph */
+    }
+
+    #startBtn {
+        width: 200px; /* Adjust button size */
+        height: 200px;
+        bottom: 10px; /* Adjust position */
+    }
+
+    #G1Btn {
+        width: 120px; /* Adjust button size */
+        height: 50px;
+    }
+
+    .gear-icon {
+        font-size: 30px; /* Adjust gear icon size */
+        bottom: 15px; /* Adjust position */
+        right: 15px; /* Adjust position */
+    }
+
+    .audio-controls {
+        top: 10px; /* Adjust position */
+        left: 10px; /* Adjust position */
+    }
+}
+
+@media (max-width: 480px) {
+    .intro-container {
+        padding: 30px; /* Further reduce padding */
+    }
+
+    .intro-content h1 {
+        font-size: 1.5em; /* Further reduce heading size */
+    }
+
+    .intro-content p {
+        font-size: 1em; /* Further reduce paragraph size */
+    }
+
+    #startBtn {
+        width: 150px; /* Adjust button size */
+        height: 150px;
+    }
+
+    #G1Btn {
+        width: 100px; /* Adjust button size */
+        height: 40px;
+    }
+
+    .gear-icon {
+        font-size: 25px; /* Further adjust gear icon size */
+    }
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cell Division: Mitosis</title>
+    <link rel="stylesheet" href="styleTelophase.css">
+    <style>
+        /* Basic styling for dropzones */
+        .dropzone-container {
+            display: flex; /* Use flexbox to align dropzones horizontally */
+            gap: 0; /* Remove gap to stick dropzones together */
+            margin-top: 20px; /* Space above dropzones */
+            justify-content: center; /* Center dropzones horizontally */
+            align-items: center; /* Center dropzones vertically */
+        }
+
+        .dropzone {
+            width: 350px; /* Set width for dropzones */
+            height: 350px; /* Set height for dropzones */
+            border: 2px dashed #ccc; /* Dashed border for visual distinction */
+            display: flex; /* Flex to enable stacking of images */
+            flex-direction: column; /* Stack images vertically */
+            justify-content: flex-start; /* Align to the top */
+            padding: 10px; /* Padding inside dropzones */
+            margin: 0; /* Remove margin from dropzones to stick them together */
+        }
+
+        #definition-container {
+            margin-top: 20px; /* Space above the definition container */
+        }
+    </style>
+</head>
+<body>
+    <h1>Cell Division: Mitosis</h1>
+    <div class="image-container">
+        <img src="imageT/centrioleL.png" alt="Image 6" class="draggable" id="img6" draggable="true" data-definition="Centrosomes: which helped organize the mitotic spindle during earlier phases, remain at the poles of the cell. Their positioning ensures that each daughter cell will inherit a centrosome."> 
+        <img src="imageT/nuclear-envelop.png" alt="Image 8" class="draggable" id="img8" draggable="true" data-definition="Nuclear membrane- re-forms around each set of separated chromosomes, creating two distinct nuclei.">
+        <img src="imageT/nucleolus.png" alt="Image 5" class="draggable" id="img5" draggable="true" data-definition="Nucleolus: Reappears within the newly formed nuclei indicating the resumption of ribosomal RNA synthesis and ribosome assembly.">
+        <img src="imageT/chromatinBR.png" alt="Image 1" class="draggable" id="img1" draggable="true" data-definition="Chromatin: Begins to de-condense. This transition from chromosomes to chromatin is essential for the proper functioning of the cells as they prepare for interphase, allowing for gene expression.">
+        <img src="imageT/chromatinRR.png" alt="Image 2" class="draggable" id="img2" draggable="true" data-definition="Chromatin: Begins to de-condense. This transition from chromosomes to chromatin is essential for the proper functioning of the cells as they prepare for interphase, allowing for gene expression.">
+                
+        <img src="imageT/chromatinBL.png" alt="Image 3" class="draggable" id="img3" draggable="true" data-definition="Chromatin: Begins to de-condense. This transition from chromosomes to chromatin is essential for the proper functioning of the cells as they prepare for interphase, allowing for gene expression.">
+        <img src="imageT/chromatinRL.png" alt="Image 4" class="draggable" id="img4" draggable="true" data-definition="Chromatin: Begins to de-condense. This transition from chromosomes to chromatin is essential for the proper functioning of the cells as they prepare for interphase, allowing for gene expression.">
+        
+        <img src="imageT/centrioleR.png" alt="Image 7" class="draggable" id="img7" draggable="true" data-definition="Centrosomes: which helped organize the mitotic spindle during earlier phases, remain at the poles of the cell. Their positioning ensures that each daughter cell will inherit a centrosome.">
+        
+    </div>
+
+    <div class="dropzone-container">
+        <div class="dropzone" id="dropzone"></div>
+        <div class="dropzone" id="duplicate-dropzone"></div>
+    </div>
+
+    <div id="definition-container"></div>
+    <script src="scriptTelophase.js"></script>
+</body>
+</html>

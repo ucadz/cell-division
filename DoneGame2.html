@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoneGame2</title>
+    <link rel="stylesheet" href="style8.css">
+    <style>
+        /* Your existing CSS styles */
+
+        .home-icon {
+            position: absolute;
+            top: 0px;
+            font-size: 36px;
+            cursor: pointer;
+            color: #32cd32;
+            background-image: url('homeBtn.png'); /* Add your image URL here */
+            background-size: cover; /* Ensures the background covers the entire element */
+            background-position: center; /* Centers the background image */
+            width: 80px; /* Adjust the width */
+            height: 70px; /* Adjust the height */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for effects */
+        }
+
+        .home-icon:hover {
+            transform: scale(1.1); /* Slightly enlarge the button */
+        }
+
+        .home-icon:active {
+            transform: scale(0.95); /* Slightly shrink the button */
+        }
+
+        /* Modal Styles */
+        .modal1 {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content1 {
+            background-color: #fff;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 20%;
+            text-align: center;
+            border-radius: 15px; /* Adjust the radius to control how round the corners are */
+        }
+
+        .modal-btn1 {
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .modal-btn1:hover {
+            background-color: #0056b3;
+        }
+
+        /* Close Button */
+        .close {
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: red;
+            cursor: pointer;
+        }
+
+        /* Buttons Styles */
+        #yesBtn, #noBtn {
+            padding: 10px 20px; /* Add padding */
+            font-size: 16px; /* Set font size */
+            border: none; /* Remove border */
+            border-radius: 5px; /* Round corners */
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: background-color 0.3s; /* Smooth transition for background color */
+        }
+
+        #yesBtn {
+            background-color: #4CAF50; /* Green color */
+            color: white; /* Text color */
+        }
+
+        #yesBtn:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+
+        #noBtn {
+            background-color: #f44336; /* Red color */
+            color: white; /* Text color */
+        }
+
+        #noBtn:hover {
+            background-color: #d32f2f; /* Darker red on hover */
+        }
+
+        /* Popup Styles */
+        .popup {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 2; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
+        }
+
+        .popup-content {
+            background-color: #fefefe;
+            margin: 15% auto; /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 30%; /* Could be more or less, depending on screen size */
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .ok-btn, #okayBtn {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .ok-btn:hover, #okayBtn:hover {
+            background-color: #45a049;
+        }
+        .ok-btn:hover, #okayBtn3:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="audio-controls">
+        <button id="toggleBtn" class="play-btn" aria-label="Play/Pause"></button> <!-- Play/Pause Button -->
+        <i id="homeIcon" class="fas fa-home home-icon"></i> <!-- Home Icon -->
+    </div>
+
+    <!-- Audio elements -->
+    <audio id="homeClickSound">
+        <source src="pop-7.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <audio id="playSoundEffect">
+        <source src="pop-7.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <audio id="pauseSoundEffect">
+        <source src="pop-7.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <audio id="backgroundMusic" loop autoplay>
+        <source src="Copyright-Free-Comedy-music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <audio id="buttonClickSound">
+        <source src="pop-7.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Home Confirmation Modal -->
+    <div id="homeModal" class="modal1">
+        <div class="modal-content1">
+            <span class="close">&times;</span>
+            <h2>Confirmation</h2>
+            <p>Are you sure you want to go home?</p>
+            <button id="yesBtn">Yes</button>
+            <button id="noBtn">No</button>
+        </div>
+    </div>
+
+    <!-- Popup Message for Game 1 -->
+    <div id="popup1" class="popup">
+        <div class="popup-content">
+            <h2>CELL DIVISION - MITOSIS (Interphase)</h2>
+            <h2>Congratulations, you completed Game 1!</h2>
+            <h3>Please proceed to the next game.</h3>
+            <button id="closePopupBtn1" class="ok-btn">Okay</button>
+        </div>
+    </div>
+
+    <!-- Instructions Popup for Game 2 -->
+    <div id="popup2" class="popup">
+        <div class="popup-content">
+            <h2>CELL DIVISION - MITOSIS</h2>
+            <h2>Congratulations, you completed Game 2!</h2>
+            <h3>Please proceed to the next game.</h3>
+            <button id="closePopupBtn2" class="ok-btn">Okay</button>
+        </div>
+    </div>
+
+    <!-- Instructions Popup for Game 3 -->
+    <div id="popupInstructions3" class="popup">
+        <div class="popup-content">
+            <span class="close" id="closeInstructionsBtn3">&times;</span>
+            <h2>Cytokinesis - MITOSIS</h2>
+            <p>How to play the game?</p>
+            <p class="justified-text">1. Jigsaw puzzle - Arrange the puzzle according to its correct placement based on the picture provided.</p>
+            
+            <button id="okayBtnGame3" class="ok-btn">Okay</button>
+        </div>
+    </div>
+
+    <!-- Game Buttons -->
+    <div class="game-container">
+        <button class="game-btn" id="game1Btn">
+            <img src="playChckBtn.png" alt="Game 1">
+            <p>Game 1: Cell Cycle Interphase</p>
+        </button>
+        <button class="game-btn" id="game2Btn">
+            <img src="playChckBtn.png" alt="Game 2">
+            <p>Game 2: Cell Division - Mitosis</p>
+        </button>
+        <button class="game-btn" id="game3Btn">
+            <img src="playBtn.png" alt="Game 3">
+            <p>Game 3: Cytokinesis - Mitosis</p>
+        </button>
+        <button class="game-btn" id="game4Btn">
+            <img src="playBtnlock.png" alt="Game 4">
+            <p>Game 4: Cell Division Quiz</p>
+        </button>
+    </div>
+
+    <script src="script11.js"></script>
+</body>
+</html>

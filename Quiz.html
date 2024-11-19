@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cell Division Quiz</title>
+        <link rel="stylesheet" href="quiz.css">
+    </head>
+    <body>
+        <div class="quiz-container">
+            <h1>Cell Division Quiz</h1>
+
+            <div id="quiz-section"></div>
+
+            <button id="next-btn" class="quiz-button" onclick="nextSet()" disabled>Next</button>
+            <button id="submit-btn" class="quiz-button" onclick="submitQuiz()" style="display:none;">Submit</button>
+
+            <!-- First Popup: Quiz Completed -->
+            <div id="score-popup" class="popup" style="display: none;">
+                <div class="popup-content">
+                    <h2>Quiz Completed!</h2>
+                    <p id="score"></p>
+                    <button type="button" class="popup-button" onclick="closeScorePopup()">Okay</button>
+                </div>
+            </div>
+
+            <!-- Second Popup: Completion Message -->
+            <div id="completion-popup" class="popup" style="display: none;">
+                <div class="popup-content">
+                    <p>You have completed all the games and quiz!</p>
+                    <button class="popup-button" onclick="continueToNextPage()">Continue</button>
+                </div>
+            </div>
+        </div>
+
+        <script src="Quiz.js"></script>
+    </body>
+</html>

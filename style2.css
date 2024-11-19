@@ -1,0 +1,246 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    /*box-sizing: border-box;*/
+}
+
+body, html {
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    background-color: paleturquoise;
+    /* Fix: Ensure the background image path is correct */
+    background: url('bckScience.png') no-repeat center center fixed;
+    background-size: cover; /* Ensures the image covers the whole background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.intro-container {
+    text-align: center; /* Fixing the typo here */
+    background: url('g1-phase-back.png') no-repeat center center fixed;
+    background-size: 600px 450px; /* Width of 600px and height of 450px */
+    padding: 190px;
+    border-radius: 15px;
+    /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); */
+    animation: fadeIn 2s ease-in-out;
+    width: 100%;
+    max-width: 600px; /* Adjust the maximum width for smaller screens */
+    margin: 0 auto; /* Center the intro-container */
+}
+
+/* Center the text */
+.intro-content {
+    /*display: flex;*/
+    flex-direction: column;
+    align-items: center;
+}
+.intro-content button {
+    margin: 20px auto 0 auto; /* Horizontal alignment of the button */
+}
+
+.intro-content h1 {
+    font-size: 3em;
+    color: #333;
+    margin-bottom: 20px; /* Spacing between heading and paragraph */
+}
+
+.intro-content p {
+    font-size: 35px;
+    color: #555;
+    margin-bottom: 40px; /* Spacing between paragraph and button */
+}
+
+#startBtn {
+    width: 250px; /* Set this to the width of your image (adjust as needed) */
+    height: 250px; /* Set this to the height of your image (adjust as needed) */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: url('start-button.png') no-repeat center center;
+    background-size: cover; /* Ensures the image covers the button */
+    transition: transform 0.3s ease; /* Change duration and easing */
+    font-size: 0; /* Hide the text inside since the image is replacing it */
+    display: block; /* Ensures it takes up space as a block element */
+    margin: 20px auto; /* Centers the button horizontally and adds space above/below */
+    position: absolute; /* Use absolute positioning to place it relative to the intro-container */
+    bottom: 20px; /* Position it 20px above the bottom of the container */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Offset for centering */
+}
+
+/* Add a hover effect to the button */
+#startBtn:hover {
+    transform: scale(1.1) rotate(5deg); /* Slight zoom and rotate effect on hover */
+}
+
+
+#G1Btn {
+    width: 145px; /* Set this to the width of your image (adjust as needed) */
+    height: 60px; /* Set this to the height of your image (adjust as needed) */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: url('g-button.png') no-repeat center center;
+    background-size: cover; /* Ensures the image covers the button */
+    transition: transform 0.3s;
+    font-size: 0; /* Hide the text inside since the image is replacing it */
+}
+
+/* Add a hover effect to the button */
+#G1Btn:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+/* Animation for the intro container */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+.intro-container {
+    text-align: center;
+    /*background: rgba(255, 255, 255, 0.7); /* Semi-transparent white background */
+    padding: 190px;
+    /*border-radius: 15px;*/
+    /*box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);*/
+    width: 100%;
+    max-width: 600px;
+}
+
+/* Gear Icon for Instructions */
+.gear-icon {
+    font-size: 40px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    color: #ff6b6b;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+
+.custom-title {
+    font-size: 80px; /* Adjust the size of the text */
+    font-family: 'Comic Sans MS'; /* Change the font style */
+    font-weight: bold; /* Make the text bold (optional) */
+    color: #fff; /* Change the color if needed */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Optional shadow effect */
+}
+.custom-heading1 {
+    font-size: 35px; /* Adjust the size of the text */
+    font-family: 'Comic Sans MS'; /* Change the font style */
+    font-weight: bold; /* Make the text bold (optional) */
+    color: mediumblue; /* Change the text color */
+    text-align: center; /* Center the text (optional) */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Optional shadow effect */
+}
+.custom-heading {
+    font-size: 28px; /* Adjust the size of the text */
+    font-family: 'Comic Sans MS'; /* Change the font style */
+    font-weight: bold; /* Make the text bold (optional) */
+    color: red; /* Change the text color */
+    text-align: center; /* Center the text (optional) */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Optional shadow effect */
+}
+/* Home Icon Styles */
+.home-icon {
+    position: absolute;
+    top: 160px;
+    font-size: 36px;
+    cursor: pointer;
+    color: #32cd32;
+    background-image: url('homeBtn.png'); /* Add your image URL here */
+    background-size: cover; /* Ensures the background covers the entire element */
+    background-position: center; /* Centers the background image */
+    width: 80px; /* Adjust the width */
+    height: 70px; /* Adjust the height */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for effects */
+   /* border-radius: 50%; /* Makes it circular if desired */
+}
+
+/* Hover effect: scale the icon and add a shadow */
+.home-icon:hover {
+    transform: scale(1.1); /* Slightly enlarge the button */
+    /*box-shadow: 0 4px 15px rgba(0, 128, 0, 0.5); /* Add a glowing shadow */
+}
+
+/* Active effect: press down animation */
+.home-icon:active {
+    transform: scale(0.95); /* Slightly shrink the button */
+    /*box-shadow: 0 2px 10px rgba(0, 128, 0, 0.3); /* Diminished shadow */
+}
+
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 20%;
+    text-align: center;
+    border-radius: 15px; /* Adjust the radius to control how round the corners are */
+}
+
+.modal-btn {
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.modal-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Close Button */
+.close {
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+button {
+    width:60px; /* Set button width */
+    height: 35px; /* Set button height */
+    font-size: 16px; /* Set font size */
+    padding: 10px 20px; /* Add padding inside the button */
+    border-radius: 10px; /* Optional: Round the button corners */
+    background-color: #32cd32; /* Set background color */
+    color: white; /* Set text color */
+    border: none; /* Remove border */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+button:hover {
+    background-color: #28a428; /* Optional: Change background color on hover */
+}
+
+
+
+

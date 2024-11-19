@@ -1,0 +1,299 @@
+/* General Body Styling */
+/* General Body Styling */
+body {
+    font-family: 'Comic Sans MS', sans-serif;
+    text-align: center;
+    background-color: paleturquoise;
+    background-image: url('background-image1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    height: 90vh;
+    overflow: hidden;
+
+}
+
+/* Background Animation */
+@keyframes backgroundMovement {
+    0% {
+        background-position: center;
+    }
+    100% {
+        background-position: center 100%; /* Adjust based on your desired movement */
+    }
+}
+
+
+/* Container for Drag and Drop */
+.container {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+}
+
+/* Dragged Images */
+.drag-items img {
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+    border: 2px solid transparent;
+    cursor: grab;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Add a glow effect and animation on drag */
+.drag-items img:active {
+    transform: scale(1.15);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    border: 3px solid #ff69b4; /* Playful pink border when dragged */
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+/* Fun wiggle effect on hover */
+.drag-items img:hover {
+    animation: hover-wiggle 0.5s ease-in-out infinite;
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 10px #ffcc00;
+    }
+    to {
+        box-shadow: 0 0 20px #ff6600;
+    }
+}
+
+@keyframes hover-wiggle {
+    0%, 100% {
+        transform: rotate(0);
+    }
+    25% {
+        transform: rotate(-5deg);
+    }
+    75% {
+        transform: rotate(5deg);
+    }
+}
+
+/* Drop Zone Styling */
+.drop-zone {
+    display: flex;
+    justify-content: space-between;
+    width: 750px;
+    margin-top: 20px;
+}
+
+.drop-slot {
+    width: 150px;
+    height: 150px;
+    border: 2px dashed #aaa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    background-color: transparent;
+    transition: border 0.4s ease, box-shadow 0.4s ease;
+}
+
+.drop-slot:hover {
+    border: 2px solid #32cd32;
+    box-shadow: 0 0 15px #32cd32;
+    animation: shake 0.2s ease-in-out;
+}
+
+@keyframes shake {
+    0% {
+        transform: translate(1px, 1px) rotate(0deg);
+    }
+    20% {
+        transform: translate(-1px, -2px) rotate(-1deg);
+    }
+    40% {
+        transform: translate(-3px, 0px) rotate(1deg);
+    }
+    60% {
+        transform: translate(3px, 2px) rotate(0deg);
+    }
+    80% {
+        transform: translate(1px, -1px) rotate(1deg);
+    }
+    100% {
+        transform: translate(1px, 1px) rotate(-1deg);
+    }
+}
+
+#text {
+
+}
+
+/* Dropped Images Display Area */
+/* Container for dropped images */
+#droppedImagesDisplay {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 20px auto;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff8dc;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Dropped Images */
+#droppedImagesDisplay img {
+    width: 150px;
+    height: 150px;
+    display: block;
+    object-fit: contain; /* Ensures the image fits within its bounding box without distortion */
+    margin: 0; /* Ensure no extra margin is affecting the layout */
+}
+#reststartBtn {
+    width: 150px; /* Set this to the width of your image (adjust as needed) */
+    height: 150px; /* Set this to the height of your image (adjust as needed) */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: url('restart-button.png') no-repeat center center;
+    background-size: cover; /* Ensures the image covers the button */
+    transition: transform 0.3s;
+    font-size: 0; /* Hide the text inside since the image is replacing it */
+}
+
+/* Add a hover effect to the button */
+#reststartBtn:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+
+/* Animation for the intro container */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Combine Button */
+#combineButton {
+    width: 150px; /* Set this to the width of your image (adjust as needed) */
+    height: 150px; /* Set this to the height of your image (adjust as needed) */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: url('merge-button.png') no-repeat center center;
+    background-size: cover; /* Ensures the image covers the button */
+    transition: transform 0.3s;
+    font-size: 0;
+}
+
+#combineButton:hover {
+
+    transform: scale(1.1);
+}
+
+/* Modal Styling */
+.modal1 {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content1 {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 300px;
+    height: 400px; /* Set a fixed height for the modal */
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    animation: pop-in 0.4s ease;
+    overflow-y: auto; /* Add a vertical scroll bar when content overflows */
+}
+
+
+@keyframes pop-in {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.modal-content1 p {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.modal-content button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.4s ease, transform 0.3s ease;
+}
+
+.modal-content button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+.modal-content button:active {
+    background-color: #3e8e41;
+    transform: scale(0.95);
+}
+
+#close-modal {
+    font-size: 24px;
+    color: #ff0000;
+    margin: 10px;
+    cursor: pointer;
+}
+
+#close-modal:hover {
+    color: #c00;
+}
+.tooltip {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    display: none;
+    font-size: 14px;
+    z-index: 1000;
+}
+.g1-phase-title {
+    font-size: 48px; /* Increase the font size */
+    color: aliceblue; /* Set text color */
+    text-align: center; /* Center the text */
+    font-weight: bold; /* Make the text bold */
+    text-shadow:
+        -1px -1px 0px rgba(0, 0, 0, 0.7),  /* Top left */
+        1px -1px 0px rgba(0, 0, 0, 0.7),   /* Top right */
+        -1px 1px 0px rgba(0, 0, 0, 0.7),   /* Bottom left */
+        1px 1px 0px rgba(0, 0, 0, 0.7),    /* Bottom right */
+        0px 0px 4px rgba(0, 0, 0, 0.7);    /* Glow effect (optional) */
+    margin-top: 20px; /* Add some space above */
+}

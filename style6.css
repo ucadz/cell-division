@@ -1,0 +1,264 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 14 Sep 2024, 9:11:04 pm
+    Author     : OSSP-ITU
+*/
+
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    /*box-sizing: border-box;*/
+}
+
+body, html {
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    background-color: paleturquoise;
+    /* Fix: Ensure the background image path is correct */
+    background: url('bckScience.png') no-repeat center center fixed;
+    background-size: cover; /* Ensures the image covers the whole background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.intro-container {
+    text-align: center; /* Fixing the typo here */
+    background: url('g1-phase-back.png') no-repeat center center fixed;
+    background-size: 600px 450px; /* Width of 600px and height of 450px */
+    padding: 190px;
+    border-radius: 15px;
+    /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); */
+    animation: fadeIn 2s ease-in-out;
+    width: 100%;
+    max-width: 600px; /* Adjust the maximum width for smaller screens */
+    margin: 0 auto; /* Center the intro-container */
+}
+
+/* Center the text */
+.intro-content {
+    /*display: flex;*/
+    flex-direction: column;
+    align-items: center;
+}
+.intro-content button {
+    margin: 20px auto 0 auto; /* Horizontal alignment of the button */
+}
+
+.intro-content h1 {
+    font-size: 3em;
+    color: #333;
+    margin-bottom: 20px; /* Spacing between heading and paragraph */
+}
+
+.intro-content p {
+    font-size: 35px;
+    color: #555;
+    margin-bottom: 40px; /* Spacing between paragraph and button */
+}
+
+#startBtn {
+    width: 150px; /* Set this to the width of your image (adjust as needed) */
+    height: 150px; /* Set this to the height of your image (adjust as needed) */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: url('start-button.png') no-repeat center center;
+    background-size: cover; /* Ensures the image covers the button */
+    transition: transform 0.3s;
+    font-size: 0; /* Hide the text inside since the image is replacing it */
+}
+
+/* Add a hover effect to the button */
+#startBtn:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+#G1Btn {
+    width: 145px; /* Set this to the width of your image (adjust as needed) */
+    height: 60px; /* Set this to the height of your image (adjust as needed) */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background: url('g-button.png') no-repeat center center;
+    background-size: cover; /* Ensures the image covers the button */
+    transition: transform 0.3s;
+    font-size: 0; /* Hide the text inside since the image is replacing it */
+}
+
+/* Add a hover effect to the button */
+#G1Btn:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+#SBtn {
+    width: 145px; /* Set this to the width of your image (adjust as needed) */
+    height: 60px; /* Set this to the height of your image (adjust as needed) */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: url('s-button.png') no-repeat center center;
+    background-size: cover; /* Ensures the image covers the button */
+    transition: transform 0.3s;
+    font-size: 0; /* Hide the text inside since the image is replacing it */
+}
+
+/* Add a hover effect to the button */
+#SBtn:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+#G2Btn {
+    width: 145px; /* Set this to the width of your image (adjust as needed) */
+    height: 60px; /* Set this to the height of your image (adjust as needed) */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: url('g2-button.png') no-repeat center center;
+    background-size: cover; /* Ensures the image covers the button */
+    transition: transform 0.3s;
+    font-size: 0; /* Hide the text inside since the image is replacing it */
+}
+
+/* Add a hover effect to the button */
+#G2Btn:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+#G1chckBtn {
+    width: 145px; /* Set this to the width of your image (adjust as needed) */
+    height: 60px; /* Set this to the height of your image (adjust as needed) */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background: url('g-chckbtn.png') no-repeat center center;
+    background-size: cover; /* Ensures the image covers the button */
+    transition: transform 0.3s;
+    font-size: 0; /* Hide the text inside since the image is replacing it */
+}
+
+/* Add a hover effect to the button */
+#G1chckBtn:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+#SchckBtn {
+    width: 145px; /* Set this to the width of your image (adjust as needed) */
+    height: 60px; /* Set this to the height of your image (adjust as needed) */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: url('s-chckbtn.png') no-repeat center center;
+    background-size: cover; /* Ensures the image covers the button */
+    transition: transform 0.3s;
+    font-size: 0; /* Hide the text inside since the image is replacing it */
+}
+
+/* Add a hover effect to the button */
+#SchckBtn:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+#G2chckBtn {
+    width: 145px; /* Set this to the width of your image (adjust as needed) */
+    height: 60px; /* Set this to the height of your image (adjust as needed) */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: url('g2-chckbtn.png') no-repeat center center;
+    background-size: cover; /* Ensures the image covers the button */
+    transition: transform 0.3s;
+    font-size: 0; /* Hide the text inside since the image is replacing it */
+}
+
+/* Add a hover effect to the button */
+#G2chckBtn:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+
+/* Animation for the intro container */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+.intro-container {
+    text-align: center;
+    /*background: rgba(255, 255, 255, 0.7); /* Semi-transparent white background */
+    padding: 190px;
+    /*border-radius: 15px;*/
+    /*box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);*/
+    width: 100%;
+    max-width: 600px;
+}
+
+/* Gear Icon for Instructions */
+.gear-icon {
+    font-size: 40px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    color: #ff6b6b;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.gear-icon:hover {
+    transform: rotate(90deg);
+}
+
+/* Modal for Instructions */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with transparency */
+}
+
+/* Modal content */
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+/* Close button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+.custom-title {
+    font-size: 90px; /* Adjust the size of the text */
+    font-family: 'Comic Sans MS'; /* Change the font style */
+    font-weight: bold; /* Make the text bold (optional) */
+    color: #fff; /* Change the color if needed */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Optional shadow effect */
+}

@@ -1,0 +1,92 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('bckScience.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.quiz-container {
+    width: 50%;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #aaa;
+    background-color: floralwhite;
+    
+}
+
+.quiz-button, .popup-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #28a745; /* Green color */
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.quiz-button:disabled {
+    background-color: #ccc; /* Gray color when disabled */
+    cursor: not-allowed;
+}
+
+.quiz-button:hover:not(:disabled), .popup-button:hover {
+    background-color: #218838; /* Darker green on hover */
+    transform: scale(1.05); /* Slightly enlarge button */
+}
+
+/* Styles for the popup container */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000; /* Ensures pop-up stays above all other elements */
+}
+
+/* Styles for the pop-up content */
+.popup-content {
+    background: white;
+    padding: 20px;
+    width: 80%; /* Adjust width as needed */
+    max-width: 400px; /* Limit width for larger screens */
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(0);
+    animation: fadeIn 0.3s ease; /* Optional fade-in animation */
+}
+
+/* Optional: Animation for smooth fade-in effect */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.checkmark {
+    color: lightgreen;
+    font-weight: bold;
+}
+.correct-answer {
+    color: green; /* Change text color to green */
+    font-weight: bold; /* Optional: make the text bold */
+}
+.question-wrong {
+    color: red;
+}
+
+
+h1 {
+    margin-bottom: 20px;
+     text-align: center;
+}
